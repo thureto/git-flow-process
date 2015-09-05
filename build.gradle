@@ -6,14 +6,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-}
-
-plugins {
-    id 'net.researchgate.release' version '2.2.1'
 }
 
 allprojects {
@@ -22,29 +17,5 @@ allprojects {
     }
 }
 
-release {
-    println("INFO: Releasing start !");
-    failOnCommitNeeded = true
-    failOnPublishNeeded = true
-    failOnSnapshotDependencies = true
-    failOnUnversionedFiles = true
-    failOnUpdateNeeded = true
-    revertOnFail = true
-    preCommitText = ''
-    preTagCommitMessage = '[Gradle Release Plugin] - pre tag commit: '
-    tagCommitMessage = '[Gradle Release Plugin] - creating tag: '
-    newVersionCommitMessage = '[Gradle Release Plugin] - new version commit: '
-    tagTemplate = '${version}'
-    versionPropertyFile = 'gradle.properties'
-    versionProperties = []
-    buildTasks = ['build']
-    scmAdapters = [
-            net.researchgate.release.GitAdapter,
-    ]
+apply from: 'gradle/release.gradle'
 
-    git {
-        requireBranch = 'master'
-        pushToRemote = 'origin'
-        pushToCurrentBranch = false
-    }
-}
