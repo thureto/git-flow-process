@@ -63,6 +63,7 @@ task persistVersionInfo(type: Exec) {
 }
 
 task tagWorkspace(type: Exec) {
+    println "tagging workspace to ${-> version}"
     commandLine 'git', 'tag', "${-> version}"
 }
 
