@@ -34,7 +34,11 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
 
+    private static final String feature2 = "feature2";
+
     private static final String feature1 = "feature1";
+
+    private static final String feature3 = "feature3";
 
     private static final String feature4 = "feature4";
 
