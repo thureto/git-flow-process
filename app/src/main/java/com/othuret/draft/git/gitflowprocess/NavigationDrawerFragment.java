@@ -34,6 +34,8 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
 
+    private static final String feature1 = "feature1";
+
     /**
      * Per the design guidelines, you should show the drawer on launch until the user manually
      * expands it. This shared preference tracks this.
